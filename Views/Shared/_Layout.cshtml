@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Reveries</title>
+    @Styles.Render("~/css/materialize.min.css")
+    @Styles.Render("~/css/animate.css")
+    @Styles.Render("~/css/material-icons.css")
+    @Styles.Render("~/css/font-awesome.min.css")
+    @Styles.Render("~/css/myStyle.css")
+    @Styles.Render("~/css/semantic.min.css")
+    <style type="text/css">
+        .spinner {
+            width: 60px;
+            height: 60px;
+            margin: 60px;
+            animation: rotate 1.4s infinite ease-in-out, background 1.4s infinite ease-in-out alternate;
+        }
+
+        @@keyframes rotate {
+            0% {
+                transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+            }
+
+            50% {
+                transform: perspective(120px) rotateX(-180deg) rotateY(0deg);
+            }
+
+            100% {
+                transform: perspective(120px) rotateX(-180deg) rotateY(-180deg);
+            }
+        }
+
+        @@keyframes background {
+            0% {
+                background-color: #27ae60;
+            }
+
+            50% {
+                background-color: #9b59b6;
+            }
+
+            100% {
+                background-color: #c0392b;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar-fixed">
+        <nav style="background-color:whitesmoke">
+            <div class="">
+                <a style="margin-left:50px" href="@Url.RouteUrl("Home")" class="brand-logo fa-spin"><img style="max-height:85px" src="~/img/logoNoText.png" /></a>
+                <ul class="right hide-on-med-and-down">
+
+                    <li style="width:600px ; margin-right:200px;">
+                        <form>
+                            <div>
+                                <input placeholder="Search..." style="color:red" id="search" type="search" >
+                            </div>
+                        </form>
+                    </li>
+                    <!-- Dropdown Trigger -->
+                    <li style="margin-right:60px"><a class="dropdown-button" href="#!" data-beloworigin="true" data-activates="dropdown1"><i style="color:red" class="material-icons right">menu</i></a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <ul id="dropdown1" class="dropdown-content">
+        <li><a href="@Url.RouteUrl("User",new {username = /*User.Identity.Name*/ "qeymax" })">Profile</a></li>
+        <li class="divider"></li>
+        <li><a href="@Url.RouteUrl("Logout")">Logout</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">About</a></li>
+    </ul>
+
+    <a href="#top" class="btn waves-effect TopBtn waves-light btn-large red darken-2 page-scroll">Top</a>
+
+    <div id="body">
+        @RenderBody()
+        
+    </div>
+        
+        
+
+    @Scripts.Render("~/bundles/Scripts")
+
+    @RenderSection("scripts", required: false)
+    <script>
+        $('#search').on('input', function (e) {
+            $('#body').empty();
+            $(document).off("scroll");
+        
+            if ($(this).val() == '')
+            {
+                window.history.pushState({ path: '/' }, '', '/');
+                window.location.href = "";
+
+            }
+            else
+            {
+                pageurl = '/Search';
+
+                
+                if (pageurl != window.location) {
+                    window.history.pushState({ path: pageurl }, '', pageurl);
+                }
+                $('#body').html("<div style=\"position: fixed;top: 50%;left: 50%;transform: translate(-50%, -50%);\"> <div class=\"spinner\"></div> </div>");
+                $('#body').load("@Url.Action("Search")", { username: $(this).val() });
+                return false;
+
+            }
+        });
+    </script>
+</body>
+</html>

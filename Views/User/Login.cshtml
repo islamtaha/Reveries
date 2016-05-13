@@ -1,0 +1,39 @@
+﻿@model Reveries.ViewModels.UserLogin
+@{
+    Layout = null;
+    ViewBag.Title = "Login";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm())
+        {
+            <div>
+                @Html.LabelFor(a => a.username)
+                @Html.EditorFor(a => a.username)
+            </div>
+
+            <div>
+                @Html.LabelFor(a => a.password)
+                @Html.EditorFor(a => a.password)
+            </div>
+
+            <div>
+
+                <input type="submit" value="Login" />
+            </div>
+
+            @Html.ValidationSummary()
+        }
+    </div>
+</body>
+</html>
+
+

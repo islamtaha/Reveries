@@ -1,0 +1,15 @@
+﻿@model Reveries.ViewModels.UserEditProfile
+@{
+    ViewBag.Title = "EditProfile";
+}
+<br/>
+<br/>
+<form method="post">
+    <textarea name="about">@Model.user.About</textarea>
+    <input type="text" name="name" value="@Model.user.Name"/>
+    <input type="email" name="email" value="@Model.user.Email"/>
+    <input type="password" name="pass" />
+    <input type="password" name="conformpass" />
+    <input type="password" name="oldpass" />
+    <input type="submit" />
+</form>

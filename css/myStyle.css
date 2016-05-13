@@ -1,0 +1,164 @@
+
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+.myRow {
+    margin: 0;
+    padding: 0;
+}
+
+.material-icons {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+main {
+    padding: 40px;
+    height: auto;
+}
+
+    main .card .card-action {
+        padding: 0 20px;
+    }
+
+        main .card .card-action .revClear, main .card .card-action .revPub {
+            cursor: pointer;
+            padding: 20px 10px;
+            border-radius: 2px;
+        }
+
+.TopBtn {
+    position: fixed;
+    bottom: 15px;
+    left: 98%;
+    margin-left: -90px;
+    z-index: 999;
+}
+
+.revShow {
+    padding: 40px 20px;
+    min-height: 700px;
+}
+
+
+.revShow .card .card-action a:not(.btn):not(.btn-large):not(.btn-floating) {
+    margin-right: 10px;
+}
+
+.revShow .card .card-action {
+    padding: 20px 0;
+    min-height: 60px;
+}
+
+.revShow .card .card-content h5 {
+    font-size: 1rem;
+    margin: 0;
+    margin-bottom: 10px;
+    color: #ffab40;
+}
+
+.revShow .card .commentShow {
+    padding: 10px 40px;
+}
+
+    .revShow .card .commentShow .comControls {
+        background-color: #d32f2f;
+    }
+
+    .revShow .card .commentShow .comCont {
+        position: relative;
+    }
+
+        .revShow .card .commentShow .comCont .comFlex {
+            padding-right: 35px;
+        }
+
+            .revShow .card .commentShow .comCont .comFlex textarea {
+                margin: 0;
+                padding: 0;
+            }
+
+    .revShow .card .commentShow p {
+        margin: 0;
+        position: relative;
+    }
+
+    .revShow .card .commentShow span {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+        .revShow .card .commentShow span * {
+            color: #ffab40;
+        }
+
+    .revShow .card .commentShow .comDel {
+        right: -30px;
+    }
+
+    .revShow .card .commentShow h1 {
+        border-bottom: 1px solid;
+    }
+
+.revShow .card .card-comment {
+    padding: 10px 40px;
+}
+
+    .revShow .card .card-comment .input-field {
+        margin: 0;
+    }
+
+    .revShow .card .card-comment .valign-wrapper {
+        min-height: 60px;
+    }
+
+        .revShow .card .card-comment .valign-wrapper a {
+            color: #ffab40;
+        }
+
+.revShow .modal .modal-content {
+    padding: 10px 20px;
+}
+
+
+.cards-container {
+ -webkit-column-break-inside: avoid;
+}
+.cards-container .card {
+  display: inline-block;
+  overflow: visible;
+  min-width:450px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+@media only screen and (max-width: 730px) {
+  .cards-container {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+  }
+}
+@media only screen and (min-width: 731px) {
+  .cards-container {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+  }
+}
+@media only screen and (min-width: 993px) {
+  .cards-container {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+  }
+}
+.text-center {
+  text-align: center;
+}
+
+/*# sourceMappingURL=myStyle.css.map */
